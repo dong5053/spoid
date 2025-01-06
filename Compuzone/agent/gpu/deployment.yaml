@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compuzone-gpu-preprocessor
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compuzone-gpu-preprocessor
+  template:
+    metadata:
+      labels:
+        app: compuzone-gpu-preprocessor
+    spec:
+      containers:
+      - name: compuzone-gpu-preprocessor
+        image: danma5053/compuzone-gpu-preprocessor:latest

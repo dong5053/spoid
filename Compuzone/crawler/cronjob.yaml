@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: compuzone-crawler
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: compuzone-crawler
+  template:
+    metadata:
+      labels:
+        app: compuzone-crawler
+    spec:
+      containers:
+      - name: compuzone-crawler
+        image: danma5053/compuzone-crawler:latest
+        env:
+        - name: KAFKA_BROKER_LIST
+          value: "kafka-controller-0.kafka-controller-headless.kafka.svc.cluster.local:9092,kafka-controller-1.kafka-controller-headless.kafka.svc.cluster.local:9092,kafka-controller-2.kafka-controller-headless.kafka.svc.cluster.local:9092"
