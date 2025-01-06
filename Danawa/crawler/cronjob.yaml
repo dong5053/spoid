@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: danawa-crawler
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: danawa-crawler
+  template:
+    metadata:
+      labels:
+        app: danawa-crawler
+    spec:
+      containers:
+      - name: danawa-crawler
+        image: danma5053/danawa-crawler:latest
+        env:
+        - name: KAFKA_BROKER_LIST
+          value: "kafka-controller-0.kafka-controller-headless.kafka.svc.cluster.local:9092,kafka-controller-1.kafka-controller-headless.kafka.svc.cluster.local:9092,kafka-controller-2.kafka-controller-headless.kafka.svc.cluster.local:9092"

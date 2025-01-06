@@ -1,0 +1,9 @@
+// Name, URL, Crawling Page Size
+cpu, "http://prod.danawa.com/list/?cate=112747", 4
+ram, "http://prod.danawa.com/list/?cate=112752", 10
+gpu, "http://prod.danawa.com/list/?cate=112753", 10
+mainboard, "http://prod.danawa.com/list/?cate=112751", 10
+storage, "http://prod.danawa.com/list/?cate=112760", 5
+power, "http://prod.danawa.com/list/?cate=112777", 10
+cooler, "http://prod.danawa.com/list/?cate=11236855", 20
+case, "http://prod.danawa.com/list/?cate=112775", 10
