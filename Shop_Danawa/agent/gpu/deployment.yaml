@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopdanawa-gpu-preprocessor
+  namespace: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopdanawa-gpu-preprocessor
+  template:
+    metadata:
+      labels:
+        app: shopdanawa-gpu-preprocessor
+    spec:
+      containers:
+      - name: shopdanawa-gpu-preprocessor
+        image: danma5053/shopdanawa-gpu-preprocessor:latest

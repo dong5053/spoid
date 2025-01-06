@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-danawa-ram-sink-connector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop-danawa-ram-sink-connector
+  template:
+    metadata:
+      labels:
+        app: shop-danawa-ram-sink-connector
+    spec:
+      containers:
+      - name: shop-danawa-ram-sink-connector
+        image: danma5053/shop-danawa-ram-sink-connector:latest
